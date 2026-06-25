@@ -1,0 +1,12 @@
+{
+  "name": "tl-smoke-mini-status-badge",
+  "version": "1.0.0",
+  "description": "Mini status badge for OpenAgents smoke test",
+  "main": "index.js",
+  "scripts": {
+    "test": "node --check index.js"
+  },
+  "keywords": [],
+  "author": "OpenAgents Worker",
+  "license": "MIT"
+}
