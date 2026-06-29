@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OpenAgents 50 TL Smoke Delivery</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #070a13;
+      --card: rgba(15, 23, 42, 0.86);
+      --line: rgba(125, 249, 255, 0.28);
+      --cyan: #65fff2;
+      --pink: #ff65c8;
+      --gold: #facc15;
+      --text: #f8fafc;
+      --muted: #a5b4fc;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(101,255,242,.18), transparent 28rem),
+        radial-gradient(circle at 80% 70%, rgba(255,101,200,.16), transparent 30rem),
+        linear-gradient(135deg, #050816, #0f172a 55%, #111827);
+      color: var(--text);
+      padding: 24px;
+    }
+    .card {
+      width: min(720px, 100%);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 28px;
+      background: var(--card);
+      box-shadow: 0 24px 80px rgba(0,0,0,.42), 0 0 42px rgba(101,255,242,.08);
+      position: relative;
+      overflow: hidden;
+    }
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: -2px;
+      background: linear-gradient(110deg, transparent, rgba(101,255,242,.20), transparent, rgba(255,101,200,.16), transparent);
+      opacity: .7;
+      pointer-events: none;
+    }
+    .content { position: relative; z-index: 1; }
+    .badge {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      border: 1px solid rgba(250,204,21,.45);
+      color: var(--gold);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-weight: 800;
+      letter-spacing: .02em;
+      background: rgba(250,204,21,.08);
+    }
+    h1 {
+      margin: 18px 0 10px;
+      font-size: clamp(32px, 6vw, 58px);
+      line-height: .95;
+      letter-spacing: -0.06em;
+    }
+    p { color: #cbd5e1; font-size: 17px; line-height: 1.65; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin-top: 22px;
+    }
+    .metric {
+      border: 1px solid rgba(148,163,184,.22);
+      border-radius: 18px;
+      padding: 14px;
+      background: rgba(2,6,23,.38);
+    }
+    .metric span { display:block; color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .12em; }
+    .metric strong { display:block; margin-top: 6px; font-size: 22px; }
+    .ok { color: var(--cyan); }
+    .note {
+      margin-top: 22px;
+      border-left: 3px solid var(--pink);
+      padding-left: 14px;
+      color: #e2e8f0;
+    }
+  </style>
+</head>
+<body>
+  <main class="card" aria-label="OpenAgents smoke test delivery">
+    <div class="content">
+      <div class="badge">✅ Payment Smoke Delivery</div>
+      <h1>OpenAgents 50 TL test teslimatı</h1>
+      <p>
+        Bu mini dosya, canlı Shopier ödeme → review → tahsilat → admin payout akışını test etmek için hazırlanmış düşük riskli worker teslimatıdır.
+      </p>
+      <section class="grid" aria-label="Smoke test metrics">
+        <div class="metric"><span>Task</span><strong>50 TL</strong></div>
+        <div class="metric"><span>Platform</span><strong>OpenAgents</strong></div>
+        <div class="metric"><span>Payout Base</span><strong>Shopier Tahsilat</strong></div>
+        <div class="metric"><span>Status</span><strong class="ok">Ready</strong></div>
+      </section>
+      <p class="note">
+        Worker payout matematiği sipariş tutarından değil, Shopier panelindeki gerçek <strong>Tahsilat Tutarı</strong> üzerinden hesaplanmalı: OpenAgents %3, worker %97.
+      </p>
+    </div>
+  </main>
+</body>
+</html>
