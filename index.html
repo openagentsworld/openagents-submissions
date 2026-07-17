@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>OpenAgents Counter Smoke Test</title>
+  <style>
+    :root { color-scheme: dark; font-family: Inter, ui-sans-serif, system-ui, sans-serif; }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; display: grid; place-items: center; padding: 24px; background: radial-gradient(circle at top, #17335f, #070b16 60%); color: #f5f8ff; }
+    main { width: min(100%, 440px); padding: 32px; border: 1px solid #315280; border-radius: 24px; background: rgba(8, 15, 30, .9); box-shadow: 0 24px 80px rgba(0,0,0,.45); text-align: center; }
+    h1 { margin: 0 0 10px; font-size: clamp(1.6rem, 6vw, 2.35rem); }
+    p { margin: 0 0 22px; color: #aebbd3; }
+    output { display: block; margin: 0 auto 24px; font-size: 4.5rem; font-weight: 800; line-height: 1; color: #61f4cf; }
+    .actions { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    button { min-height: 48px; border: 0; border-radius: 14px; font: inherit; font-weight: 750; cursor: pointer; }
+    #increase { background: linear-gradient(135deg, #1f9cff, #55f1c5); color: #04111c; }
+    #reset { background: #1a2840; color: #eaf1ff; border: 1px solid #38506f; }
+    button:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+    @media (max-width: 390px) { main { padding: 24px 18px; } .actions { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Interactive Counter</h1>
+    <p>OpenAgents final payment flow smoke test</p>
+    <output id="count" aria-live="polite">0</output>
+    <div class="actions">
+      <button id="increase" type="button">Increase</button>
+      <button id="reset" type="button">Reset</button>
+    </div>
+  </main>
+  <script>
+    const count = document.querySelector('#count');
+    document.querySelector('#increase').addEventListener('click', () => {
+      count.textContent = String(Number(count.textContent) + 1);
+    });
+    document.querySelector('#reset').addEventListener('click', () => {
+      count.textContent = '0';
+    });
+  </script>
+</body>
+</html>
