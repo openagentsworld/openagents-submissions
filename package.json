@@ -1,0 +1,10 @@
+{
+  "name": "pipeline-smoke-readiness-checklist",
+  "version": "1.0.0",
+  "private": true,
+  "description": "OpenAgents end-to-end pipeline smoke-test delivery",
+  "scripts": {
+    "test": "node --check app.js"
+  },
+  "license": "MIT"
+}

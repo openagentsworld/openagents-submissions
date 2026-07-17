@@ -1,0 +1,303 @@
+:root {
+  color-scheme: dark;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #f8fafc;
+  background: #07111f;
+  font-synthesis: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 0;
+  min-height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at 15% 10%, rgba(34, 197, 94, 0.2), transparent 34rem),
+    radial-gradient(circle at 85% 90%, rgba(14, 165, 233, 0.2), transparent 32rem),
+    #07111f;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.page-shell {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 32px 20px;
+}
+
+.checklist-card {
+  width: min(100%, 680px);
+  min-width: 0;
+  padding: clamp(24px, 5vw, 42px);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  border-radius: 28px;
+  background: rgba(15, 23, 42, 0.88);
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.42);
+  backdrop-filter: blur(18px);
+}
+
+.card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.card-header > div {
+  min-width: 0;
+}
+
+.eyebrow {
+  margin: 0 0 9px;
+  color: #86efac;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(1.8rem, 6vw, 3.2rem);
+  line-height: 1.06;
+  letter-spacing: -0.045em;
+  overflow-wrap: anywhere;
+}
+
+.intro {
+  max-width: 44ch;
+  margin: 14px 0 0;
+  color: #aebdd0;
+  line-height: 1.6;
+}
+
+.status-badge {
+  flex: 0 0 auto;
+  padding: 8px 12px;
+  border: 1px solid rgba(251, 191, 36, 0.3);
+  border-radius: 999px;
+  color: #fde68a;
+  background: rgba(245, 158, 11, 0.12);
+  font-size: 0.75rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.checklist-card[data-complete="true"] .status-badge {
+  border-color: rgba(74, 222, 128, 0.36);
+  color: #bbf7d0;
+  background: rgba(34, 197, 94, 0.14);
+}
+
+.progress-summary {
+  margin: 30px 0 24px;
+}
+
+.progress-copy {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 10px;
+  color: #cbd5e1;
+  font-size: 0.9rem;
+}
+
+.progress-copy strong {
+  color: #f8fafc;
+  font-size: 1rem;
+}
+
+.progress-track {
+  height: 10px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #1e293b;
+}
+
+.progress-fill {
+  display: block;
+  width: 0;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #22c55e, #38bdf8);
+  transition: width 220ms ease;
+}
+
+.checklist {
+  display: grid;
+  gap: 12px;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.check-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  border-radius: 18px;
+  background: rgba(30, 41, 59, 0.62);
+  cursor: pointer;
+  transition: border-color 160ms ease, background 160ms ease, transform 160ms ease;
+}
+
+.check-item:hover {
+  border-color: rgba(125, 211, 252, 0.5);
+  transform: translateY(-1px);
+}
+
+.check-item:has(input:focus-visible) {
+  outline: 3px solid rgba(56, 189, 248, 0.55);
+  outline-offset: 3px;
+}
+
+.check-item:has(input:checked) {
+  border-color: rgba(74, 222, 128, 0.42);
+  background: rgba(20, 83, 45, 0.3);
+}
+
+.check-item input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.check-icon {
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  display: grid;
+  place-items: center;
+  border: 2px solid #64748b;
+  border-radius: 8px;
+  color: #052e16;
+  background: transparent;
+}
+
+.check-item input:checked + .check-icon {
+  border-color: #4ade80;
+  background: #4ade80;
+}
+
+.check-item input:checked + .check-icon::after {
+  content: "✓";
+  font-size: 0.9rem;
+  font-weight: 900;
+}
+
+.check-copy {
+  min-width: 0;
+}
+
+.check-copy strong,
+.check-copy small {
+  display: block;
+  overflow-wrap: anywhere;
+}
+
+.check-copy strong {
+  color: #f8fafc;
+}
+
+.check-copy small {
+  margin-top: 4px;
+  color: #9fb0c6;
+  line-height: 1.45;
+}
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.live-status {
+  min-width: 0;
+  margin: 0;
+  color: #b8c6d8;
+  font-size: 0.88rem;
+  overflow-wrap: anywhere;
+}
+
+button {
+  flex: 0 0 auto;
+  min-height: 44px;
+  padding: 11px 16px;
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  border-radius: 12px;
+  color: #e2e8f0;
+  background: #1e293b;
+  font-weight: 750;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #293548;
+}
+
+button:focus-visible {
+  outline: 3px solid rgba(56, 189, 248, 0.6);
+  outline-offset: 3px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 560px) {
+  .page-shell {
+    padding: 18px 14px;
+  }
+
+  .checklist-card {
+    border-radius: 22px;
+  }
+
+  .card-header,
+  .card-footer {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .status-badge {
+    align-self: flex-start;
+  }
+
+  button {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

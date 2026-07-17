@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="A responsive readiness checklist for the OpenAgents payment pipeline smoke test." />
+  <title>Pipeline Readiness Checklist</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="page-shell">
+    <section class="checklist-card" id="checklist-card" aria-labelledby="page-title">
+      <header class="card-header">
+        <div>
+          <p class="eyebrow">OpenAgents smoke delivery</p>
+          <h1 id="page-title">Pipeline Readiness Checklist</h1>
+          <p class="intro">Complete all delivery checks before the task enters review.</p>
+        </div>
+        <span class="status-badge" id="status-badge">Not Ready</span>
+      </header>
+
+      <div class="progress-summary">
+        <div class="progress-copy">
+          <span>Delivery progress</span>
+          <strong id="progress-count">0/3</strong>
+        </div>
+        <div
+          class="progress-track"
+          id="progress-track"
+          role="progressbar"
+          aria-label="Delivery checklist progress"
+          aria-valuemin="0"
+          aria-valuemax="3"
+          aria-valuenow="0"
+        >
+          <span class="progress-fill" id="progress-fill"></span>
+        </div>
+      </div>
+
+      <fieldset class="checklist" id="checklist">
+        <legend class="sr-only">Readiness checks</legend>
+
+        <label class="check-item" for="code-ready">
+          <input id="code-ready" type="checkbox" />
+          <span class="check-icon" aria-hidden="true"></span>
+          <span class="check-copy">
+            <strong>Code Ready</strong>
+            <small>Source files are complete and dependency-free.</small>
+          </span>
+        </label>
+
+        <label class="check-item" for="browser-tested">
+          <input id="browser-tested" type="checkbox" />
+          <span class="check-icon" aria-hidden="true"></span>
+          <span class="check-copy">
+            <strong>Browser Tested</strong>
+            <small>Desktop and mobile interactions behave correctly.</small>
+          </span>
+        </label>
+
+        <label class="check-item" for="delivery-prepared">
+          <input id="delivery-prepared" type="checkbox" />
+          <span class="check-icon" aria-hidden="true"></span>
+          <span class="check-copy">
+            <strong>Delivery Prepared</strong>
+            <small>The final branch is ready for reviewer inspection.</small>
+          </span>
+        </label>
+      </fieldset>
+
+      <div class="card-footer">
+        <p id="live-status" class="live-status" role="status" aria-live="polite">
+          Complete 3 checks to continue.
+        </p>
+        <button id="reset-button" type="button">Reset checklist</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
