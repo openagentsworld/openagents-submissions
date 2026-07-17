@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OpenAgents Final Payment Smoke Test</title>
+  <style>
+    :root { color-scheme: dark; font-family: Inter, system-ui, sans-serif; }
+    * { box-sizing: border-box; }
+    body {
+      min-height: 100vh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      background: #07111f;
+      color: #e6f7ff;
+    }
+    .card {
+      width: min(420px, calc(100% - 32px));
+      padding: 28px;
+      border: 1px solid #1cd6d0;
+      border-radius: 20px;
+      background: #0e1b2e;
+      box-shadow: 0 20px 60px #0008;
+      text-align: center;
+    }
+    h1 { margin: 0 0 10px; font-size: 24px; }
+    p { color: #9fb7cc; }
+    #status {
+      display: inline-block;
+      margin: 14px 0 20px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: #40213a;
+      color: #ff83c8;
+      font-weight: 800;
+    }
+    #status.ready { background: #123b35; color: #55f0c2; }
+    button {
+      width: 100%;
+      padding: 13px 18px;
+      border: 0;
+      border-radius: 12px;
+      background: linear-gradient(90deg, #14d4d8, #19e889);
+      color: #04111b;
+      font: inherit;
+      font-weight: 900;
+      cursor: pointer;
+    }
+    button:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <h1>Delivery Status Card</h1>
+    <p>Deterministic OpenAgents payment flow fixture.</p>
+    <div id="status" role="status" aria-live="polite">Pending</div>
+    <button id="complete-button" type="button">Mark Complete</button>
+  </main>
+  <script>
+    const status = document.getElementById('status');
+    const button = document.getElementById('complete-button');
+
+    button.addEventListener('click', () => {
+      status.textContent = 'Ready';
+      status.classList.add('ready');
+      button.textContent = 'Completed';
+      button.disabled = true;
+    });
+  </script>
+</body>
+</html>
