@@ -1,0 +1,14 @@
+# VelaNorth Logistics Acceptance Matrix
+
+| # | Acceptance requirement | Implementation | Verification | Evidence |
+|---|---|---|---|---|
+| 1 | The 1440 × 900 first screen shows the brand, a clear value proposition, a primary CTA, and an animated logistics world. | Branded masthead, editorial hero copy, “Plan a shipment” CTA, and the procedural dispatch-yard scene. | Direct-file desktop browser capture and DOM visibility assertions. | `desktop-hero.png` |
+| 2 | Road, Sea, and Air Freight plus a four-step shipment journey are present. | Three semantic service sections and an ordered four-step journey. | Heading/content assertions and section captures. | `desktop-road.png`, `desktop-sea.png`, `desktop-air.png`, `desktop-journey.png` |
+| 3 | Scroll drives one continuous camera/route sequence with local GSAP, ScrollTrigger, and procedural Three.js. | One top-level scrubbed timeline controls the camera, route reveal, vehicle movement, and section states in a connected world. | Runtime assertion confirms one ScrollTrigger; local dependency and source scans confirm vendored scripts and procedural factories. | `desktop-hero.png` through `desktop-journey.png` |
+| 4 | The 390 × 844 layout has no horizontal overflow and keeps navigation, copy, CTA, and form usable. | Mobile navigation, responsive type/layout, bounded canvas, and single-column form. | Mobile browser assertions compare scroll width to viewport width and exercise the menu, CTA, and form. | `mobile-hero.png`, `mobile-quote.png` |
+| 5 | The quote form blocks empty required fields and invalid email, then shows a local success state without sending data. | Native constraints plus local validation messages and an in-page success panel; no endpoint or network submission. | Empty, invalid-email, and valid-success test cases with request monitoring. | `mobile-quote.png` |
+| 6 | Controls are keyboard reachable with visible focus and fields have visible labels. | Semantic links/buttons, explicit labels, logical source order, and `:focus-visible` styling. | Tab-order, focus-outline, and label association assertions. | `mobile-quote.png` |
+| 7 | Reduced motion provides a stable non-animated fallback. | Motion-query branch removes ScrollTriggers and presents all content with a fixed overview composition. | Browser context emulating `prefers-reduced-motion: reduce`. | `reduced-motion.png` |
+| 8 | Opening `index.html` makes no external requests and produces no console errors. | Relative local assets only, vendored dependencies, procedural geometry, and designed WebGL fallback. | Direct `file://` load with console and network monitoring; forced WebGL failure test. | `webgl-fallback.png` |
+
+The three vehicle screenshots for each accepted factory are retained separately as `truck-threequarter.png`, `truck-profile.png`, `ship-threequarter.png`, `ship-profile.png`, `aircraft-threequarter.png`, and `aircraft-profile.png`.
