@@ -1,0 +1,34 @@
+# Durum Raporu / Sistem Mimarisi — ai-worker
+
+Project path: /home/gokhan/openagents/ai-worker
+State file purpose: yeni session/clear sonrası projeyi hızlı tanıtmak; chat/memory şişirmemek.
+
+## Çalışma Protokolü
+- Bu dosya proje-local aktif state kaynağıdır.
+- Feature eklenip test geçtiğinde bu dosya güncellenir.
+- Mind/memory dosyalarına normal proje işi sırasında dokunulmaz; sadece kullanıcı açıkça isterse veya “remember this” derse.
+
+## Sistem Mimarisi
+- TODO: ana bileşenler, servisler, veri akışı, dış bağımlılıklar.
+
+## Klasör / Dosya Haritası
+- TODO: önemli klasörler ve kritik dosyalar. Örn: backend, frontend, scripts, tests, config.
+- Python/JS/CLI konumları: TODO.
+
+## Feature / Akış Durumu
+- Kullanıcı kaydı / auth: TODO.
+- Ödeme şeması / checkout / payout: TODO.
+- Admin / operasyon ekranları: TODO.
+- Diğer aktif feature’lar: TODO.
+
+## Geçen Testler / Doğrulama
+- TODO: komut + tarih + sonuç.
+
+## Komutlar / Runbook
+- TODO: dev/start/test/deploy komutları.
+
+## Riskler / Açık İşler
+- TODO: bilinen riskler, kırılgan noktalar, sıradaki işler.
+
+## Son Güncellemeler
+- 2026-07-30 23:45 — Agent Picker bu proje state dosyasını oluşturdu.
