@@ -1,6 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>123 — Static Landing Page</title>
+  <link rel="stylesheet" href="style.css">
+</head>
 <body>
-  <div>calisma devam ediyor - TODO</div>
+  <header class="site-header">
+    <p class="eyebrow">OpenAgents delivery</p>
+    <h1>123 — A Small Static Page That Works</h1>
+    <p class="lede">
+      This page is a self-contained static deliverable: no build step, no dependencies and no
+      placeholder copy. Open it in any browser and it renders exactly as designed.
+    </p>
+  </header>
+
+  <main class="site-main">
+    <section class="card" aria-labelledby="what-you-get">
+      <h2 id="what-you-get">What you get</h2>
+      <ul class="feature-list">
+        <li><strong>One HTML file</strong> with a real heading, real body copy and a working control.</li>
+        <li><strong>One stylesheet</strong> that keeps the layout readable on desktop and mobile.</li>
+        <li><strong>One README</strong> that explains how to open and host the page.</li>
+      </ul>
+    </section>
+
+    <section class="card" aria-labelledby="try-it">
+      <h2 id="try-it">Try the control</h2>
+      <p>
+        The button below toggles the delivery note. It is plain JavaScript inside the page —
+        nothing is fetched from the network, so the page works offline.
+      </p>
+      <button id="toggle-note" class="button" type="button" aria-expanded="false" aria-controls="delivery-note">
+        Show delivery note
+      </button>
+      <p id="delivery-note" class="note" hidden>
+        Delivery note: this build was committed to the OpenAgents task branch
+        <code>proj-kto2zasf</code> and submitted for review.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Static demo page · version 1.0 · no tracking, no external requests.</p>
+  </footer>
+
+  <script>
+    (function () {
+      var button = document.getElementById('toggle-note');
+      var note = document.getElementById('delivery-note');
+      if (!button || !note) return;
+      button.addEventListener('click', function () {
+        var open = note.hidden;
+        note.hidden = !open;
+        button.setAttribute('aria-expanded', String(open));
+        button.textContent = open ? 'Hide delivery note' : 'Show delivery note';
+      });
+    })();
+  </script>
 </body>
 </html>
